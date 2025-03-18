@@ -2,7 +2,7 @@ package com.training.bank;
 
 public class SavingAccount  extends Account implements PrimaryAccount{
 	
-	//Attributes
+	//Attributes for the class
 	private double roi;
 	private double minBalance;	
 	
