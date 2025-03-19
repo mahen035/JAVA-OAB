@@ -22,18 +22,13 @@ public class SavingAccount  extends Account implements PrimaryAccount{
 		return minBalance;
 	}
 
-
-
 	public void setMinBalance(double minBalance) {
 		this.minBalance = minBalance;
 	}
 
-
-
 	public void setRoi(double roi) {
 		this.roi = roi;
 	}
-
 
 	//Behaviour
 	public double calculate(double amount, double roi) {
