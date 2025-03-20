@@ -2,8 +2,10 @@ package com.training.collection;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -46,6 +48,16 @@ public class CollectionDemo {
 		
 		for(Employee emp:empList) {
 			System.out.println(emp);
+		}
+		
+		Map<Integer, String> empMap = new HashMap<>();
+		empMap.put(101, "Mohammed");
+		empMap.put(102, "Suleiman");
+		empMap.put(103, "Farah");
+		empMap.put(101, "Noorie");
+		
+		for(Entry<Integer,String> empEntry : empMap.entrySet()) {
+			System.out.println(empEntry.getKey()+":"+empEntry.getValue());
 		}
 //		Iterator<String> iter = names.iterator();
 //		while(iter.hasNext()) {
