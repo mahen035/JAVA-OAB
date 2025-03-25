@@ -9,7 +9,10 @@ public class SpringTester {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 		Employee emp = (Employee)context.getBean("employee");
-		System.out.println(emp.getEmpName());
+		Department dept = (Department)context.getBean("dept");
+		System.out.println(emp.getEmpName()+":"+emp.getEmpId());
+		System.out.println(dept.getDeptName());
+		System.out.println(emp.getEmpDetails());
 
 	}
 
