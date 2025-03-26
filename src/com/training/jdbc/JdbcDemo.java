@@ -12,17 +12,17 @@ public class JdbcDemo {
 	public static void main(String[] args) {
 		
 		   // String url = jdbc:oracle:thin:@localhost:1521:FREE
-//		    String url = "jdbc:postgresql://localhost:5432/testdb";
-//	        String username = "postgres";
-//	        String password = "pass123";
+		    String url = "jdbc:postgresql://localhost:5432/testdb";
+	        String username = "postgres";
+	        String password = "pass123";
 				
 			try {
-				Properties props = new Properties();
-				FileInputStream input = new FileInputStream("db.properties");
-				props.load(input);
-				String url = props.getProperty("db.url");
-				String username = props.getProperty("db.user");
-				String password = props.getProperty("db.password");
+//				Properties props = new Properties();
+//				FileInputStream input = new FileInputStream("db.properties");
+//				props.load(input);
+//				String url = props.getProperty("db.url");
+//				String username = props.getProperty("db.user");
+//				String password = props.getProperty("db.password");
 				
 			  Class.forName("org.postgresql.Driver");
 	        // Connect to the database
