@@ -13,23 +13,23 @@ import com.training.springboot.model.Product;
 import com.training.springboot.service.ProductService;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/v1/product")
 public class HomeController {
 	
 	@Autowired
 	private ProductService service;
 	
-	@GetMapping
-	public String greet() {
-		return "Hello from spring boot!";
-	}
+//	@GetMapping
+//	public String greet() {
+//		return "Hello from spring boot!";
+//	}
 	
-	@PostMapping("/product")
+	@PostMapping
 	public Product addProduct(@RequestBody Product product){
 		return service.addProduct(product);
 	}
 	
-	@GetMapping("/product")
+	@GetMapping
 	public List<Product> getProducts(){
 		return service.getAllProducts();
 	}
