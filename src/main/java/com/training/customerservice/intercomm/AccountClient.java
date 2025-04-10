@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.training.customerservice.model.Account;
 
-@FeignClient(name = "transaction-service", url="http://localhost:8082/api/v1/transaction")
+//@FeignClient(name = "transaction-service", url="http://localhost:8082/api/v1/transaction")
+@FeignClient("transaction-service/api/v1/transaction")
 public interface AccountClient {
 	@PostMapping("/account")
 	Account addAccount(UUID customerID, @RequestParam Double balance, @RequestParam String accountType);
