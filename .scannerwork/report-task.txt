@@ -1,0 +1,6 @@
+projectKey=spring-boot
+serverUrl=http://localhost:9000
+serverVersion=25.4.0.105899
+dashboardUrl=http://localhost:9000/dashboard?id=spring-boot
+ceTaskId=f3d1922c-2aff-46da-ad32-5cddbe93c740
+ceTaskUrl=http://localhost:9000/api/ce/task?id=f3d1922c-2aff-46da-ad32-5cddbe93c740
