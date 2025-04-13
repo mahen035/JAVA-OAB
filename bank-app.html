@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banking App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 p-6">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6">Banking Application</h1>
+
+    <!-- Create Customer Form -->
+    <div class="bg-white p-6 rounded shadow mb-8">
+      <h2 class="text-xl font-semibold mb-4">Create Customer</h2>
+      <form id="customerForm" class="grid grid-cols-2 gap-4">
+        <input class="border p-2 rounded" type="text" placeholder="Name" id="name" required />
+        <input class="border p-2 rounded" type="email" placeholder="Email" id="email" required />
+        <input class="border p-2 rounded" type="text" placeholder="Phone" id="phone" required />
+        <input class="border p-2 rounded col-span-2" type="text" placeholder="Address" id="address" required />
+        <input class="border p-2 rounded col-span-2" type="number" placeholder="Initial Balance" id="balance" required />
+        <select class="border p-2 rounded col-span-2" id="accountType" required>
+            <option value="">Select Account Type</option>
+            <option value="savings">Savings</option>
+            <option value="checking">Checking</option>
+          </select>
+        <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded col-span-2">Create Customer</button>
+      </form>
+      <p class="mt-2 text-green-600" id="customerMsg"></p>
+    </div>
+
+<script>
+    const baseURL = 'http://localhost:8085/api/v1';
+    // Create customer
+    document.getElementById('customerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const customer = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        balance: document.getElementById('balance').value,
+        accountType: document.getElementById('accountType').value
+      };
+      const res = await fetch(baseURL+"/customer?balance="+customer.balance+"&accountType="+customer.accountType, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(customer)
+      });
+      const data = await res.json();
+      if(data !== undefined){
+        document.getElementById('customerMsg').innerText = `Customer created with ID: ${data.id}`;
+        document.getElementById('customerForm').reset()
+      }
+      
+    });
+</script>    
+
+</body>
+</html>
