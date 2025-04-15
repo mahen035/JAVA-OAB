@@ -22,7 +22,9 @@ public class Customer {
     @Column(nullable=false)
     private String email;
     
-    @Column(length = 8)
+    @Column(nullable=false)
+    private String password;
+    
     @Size(min=8, max=8)
     private String phone;
     private String address;
